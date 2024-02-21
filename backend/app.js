@@ -8,7 +8,7 @@ require('dotenv').config();
 const app = express();
 
 mongoose.connect(
-  'mongodb+srv://romainbories09:aN7Gga4OccDYubsl@cluster0.4bxggvb.mongodb.net/test?retryWrites=true&w=majority',
+  process.env.DB_URL,
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,

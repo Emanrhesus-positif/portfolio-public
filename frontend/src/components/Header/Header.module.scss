@@ -1,0 +1,42 @@
+header{
+    box-sizing: border-box;
+    position:fixed;
+    top: 0;
+    width:100%;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    font-family: "Plus Jakarta Sans";
+    background-color: var(--primary-color);
+    div {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+    img{
+        width:6rem;
+        border-radius: 50%;
+        margin-right: auto;
+    }
+    p {
+        font-size: 5rem;
+    }
+    ul {
+        display: flex;
+        margin: auto;
+        margin-right: 0;
+
+        li {
+            padding-inline: 1rem;
+            list-style-type: none;
+            a {
+                text-decoration: none;
+                color: var(--secondary-color);
+            }
+            a.activeLink {
+                font-weight: bold;
+                text-decoration: underline;
+            }
+        }
+    }
+}

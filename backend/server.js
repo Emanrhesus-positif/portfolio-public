@@ -13,7 +13,7 @@ const normalizePort = val =>{
   }
   return false;
 };
-const port = normalizePort(process.env.PORT || '4000');
+const port = normalizePort(process.env.PORT);
 app.set('port', port);
 //error
 const errorHandler = error => {
@@ -35,7 +35,6 @@ const errorHandler = error => {
       throw error;
   }
 };
-
 
 server.on('error', errorHandler);
 server.on('listening', () => {

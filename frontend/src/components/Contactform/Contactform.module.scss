@@ -1,0 +1,19 @@
+form {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--element-color);
+    border-radius: 3rem;
+    box-shadow:  0 1rem 2rem rgba(0, 0, 0, 0.726);
+    padding: 2rem;
+    margin: 2rem;
+    align-items: center;
+    width: auto;
+
+    label, input{
+        max-width: 20rem;
+    }
+    textarea {
+        height:auto;
+        max-width: 90%;
+    }
+}
