@@ -13,8 +13,7 @@ export const PersonalSpace = () => {
       <div className={styles.Container}>
         {!created ? (
           <>
-            <h1>Ajouter un projet</h1>
-            <p>tous les champs sont obligatoires</p>
+            <h1>Ajout de Projet</h1>
             <ProjectForm validate={setCreated} />
           </>
         ) : (

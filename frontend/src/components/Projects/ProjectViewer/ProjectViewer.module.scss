@@ -1,0 +1,14 @@
+.projectsViewer{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: black;
+    padding: 2rem;
+    align-items: center;
+    width: auto;
+    color: var(--secondary-color);
+    img{
+        width: auto;
+    }
+
+}

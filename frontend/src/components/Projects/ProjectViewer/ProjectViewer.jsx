@@ -19,7 +19,7 @@ export const ProjectViewer = () => {
     }, []);
     return (
         <div className={styles.projectsViewer}>
-            {loading ? <h1>Chargement</h1> : displayProjects()}
+            {loading ? <h1>Chargement en cours...</h1> : displayProjects()}
         </div>
     );
 }

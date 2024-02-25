@@ -11,20 +11,10 @@ export const ProjectItem = ({ project }) => {
         <h3>{project.title}</h3>
         <p>{project.description}</p>
         <a href={project.gitHubUrl} target="_blank" rel="noreferrer">
-          Voir le projet
+          Voir le code du projet
         </a>
-        <Link to={`/projects/${project._id}`}>Voir les détails</Link>
+        <Link to={`/projects/${project._id}`}>Infos détaillées</Link>
       </div>
     </div>
   );
-};
-
-ProjectItem.propTypes = {
-  project: PropTypes.shape({
-    _id: PropTypes.string,
-    title: PropTypes.string,
-    description: PropTypes.string,
-    imageUrl: PropTypes.string,
-    gitHubUrl: PropTypes.string,
-  }).isRequired,
 };
