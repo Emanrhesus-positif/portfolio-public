@@ -1,0 +1,32 @@
+.ProjectItem {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s;
+  }
+  :hover img {
+    transform: translateX(-50%);
+  }
+}
+
+.details {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  background-color: #fff;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.container:hover .details {
+  opacity: 1;
+}

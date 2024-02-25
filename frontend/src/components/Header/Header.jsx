@@ -1,11 +1,14 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+import { APP_ROUTES } from '../../utils/constants';
 import styles from './Header.module.scss';
 import profilePic from '../../assets/images/ProfilePic.webp';
 
-export const Header = () => {
+export const Header = ({ user, setUser }) => {
+  
 
+  //Used to navigate through the main page content
   const handleClick = (event, id) => {
     event.preventDefault();
     const element = document.getElementById(id);
@@ -13,6 +16,7 @@ export const Header = () => {
       element.scrollIntoView({ behavior: 'smooth' });
     }
   };
+  //used to change Header parameters when moving down on the page
   const [scroll, setScroll] = useState(0);
   useEffect(() => {
     const handleScroll = () => {
@@ -24,6 +28,13 @@ export const Header = () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
+
+  const navigate = useNavigate();
+  const disconnect = () => {
+    localStorage.clear();
+    setUser(null);
+    navigate('/');
+  };
 
   return (
     <header className={scroll ? styles.downed : styles.Header}>
@@ -50,6 +61,12 @@ export const Header = () => {
                 Contact
               </NavLink>
           </li>
+          <li>
+              <NavLink to={APP_ROUTES.PERSONAL_SPACE} activeClassName={styles.activeLink}>
+                Mon Espace
+              </NavLink>
+          </li>
+          <li>{!user ? <NavLink to="/Connexion" className={({ isActive }) => (isActive ? styles.activeLink : undefined)}>Se connecter</NavLink> : <span tabIndex={0} role="button" onKeyUp={disconnect} onClick={disconnect}>Se déconnecter</span> }</li>
         </ul>
       </div>
     </header>

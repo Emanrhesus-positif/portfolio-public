@@ -3,6 +3,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const path = require('path');
 const authRoutes = require('./routes/user');
+const projectRoutes = require('./routes/project');
 require('dotenv').config();
 
 const app = express();
@@ -29,7 +30,8 @@ app.use((req, res, next) => {
   next();
 });
 
-//Routes 
+//Routes
+app.use('/api/projects', projectRoutes);
 app.use('/api/auth', authRoutes);
 
 app.use((req, res) => {
