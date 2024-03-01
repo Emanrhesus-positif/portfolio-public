@@ -2,6 +2,7 @@
 header{
     box-sizing: border-box;
     position:fixed;
+    z-index: 2;
     top: 0;
     width:100%;
     padding: 1rem;
@@ -9,7 +10,9 @@ header{
     align-items: center;
     font-family: "Plus Jakarta Sans";
     background-color: var(--primary-color);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    color: var(--accent-color);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 100);
+    max-height: var(--header-size);
 
     div {
         display: flex;
@@ -27,14 +30,19 @@ header{
     ul {
         display: flex;
         margin: auto;
+        align-items: center;
         margin-right: 0;
 
         li {
             padding-inline: 1rem;
             list-style-type: none;
+            img{
+                width: 2rem;
+                background-color: var(--element-color)
+            }
             a {
                 text-decoration: none;
-                color: var(--secondary-color);
+                color: var(--text-color);
             }
             a.activeLink {
                 font-weight: bold;

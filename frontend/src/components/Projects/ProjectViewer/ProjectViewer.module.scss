@@ -1,14 +1,48 @@
-.projectsViewer{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    background-color: black;
-    padding: 2rem;
-    align-items: center;
-    width: auto;
-    color: var(--secondary-color);
-    img{
-        width: auto;
-    }
 
+.projectslink{
+    padding-top: var(--header-size);
+    margin-top: auto;
+    margin-inline: auto;
+    .projectsViewer{
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: row;
+
+        margin: auto;
+        justify-content: center;
+        align-items: center;
+        color: var(--secondary-color);
+
+        img{
+            width: auto;
+        }
+        .projectItem {
+            display: none;
+            opacity: 0;
+        
+            &.current {
+              display: block;
+              opacity: 1;
+              animation-name: fadeIn;
+              animation-duration: 500ms;
+            }
+        }
+        button{
+            background-color: var(--secondary-color);
+            border: none;
+            font-size: 2rem;
+            cursor: pointer;
+        }
+        .buttonleft{
+            height:100%;
+        }
+        .buttonright{
+            height: 100%;
+        }
+    
+    }
 }
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }

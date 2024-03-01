@@ -5,6 +5,7 @@ export const API_ROUTES = {
   SIGN_IN: `${API_URL}/api/auth/login`,
   PROJECTS: `${API_URL}/api/projects`,
   USER: `${API_URL}/api/user`,
+  MAIL: `${API_URL}/api/mail`,
 };
 
 export const APP_ROUTES = {

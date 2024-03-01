@@ -5,6 +5,7 @@ import styles from './Aboutme.module.scss';
 export const Aboutme = () => {
   return (
     <div id="a-propos" className={styles.Aboutmelink}>
+      <br />
       <section className={styles.Aboutme}>
       <h2>Qui suis-je</h2>
       <p>
@@ -13,6 +14,5 @@ export const Aboutme = () => {
       </p>
     </section>
     </div>
-    
   );
 }

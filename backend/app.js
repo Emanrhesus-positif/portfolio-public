@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const path = require('path');
 const authRoutes = require('./routes/user');
 const projectRoutes = require('./routes/project');
+const { sendFormDataInMail } = require('./controllers/mail');
 require('dotenv').config();
 
 const app = express();
@@ -33,6 +34,7 @@ app.use((req, res, next) => {
 //Routes
 app.use('/api/projects', projectRoutes);
 app.use('/api/auth', authRoutes);
+app.post('/api/mail', sendFormDataInMail);
 
 app.use((req, res) => {
   res.json({ message: 'Votre requête a bien été reçue !' });

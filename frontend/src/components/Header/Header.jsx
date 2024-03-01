@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { APP_ROUTES } from '../../utils/constants';
 import styles from './Header.module.scss';
 import profilePic from '../../assets/images/ProfilePic.webp';
+import modif from '../../assets/images/modif.svg';
 
 export const Header = ({ user, setUser }) => {
   
@@ -57,16 +58,30 @@ export const Header = ({ user, setUser }) => {
             </NavLink>
           </li>
           <li>
-              <NavLink to="/#contact" activeClassName={styles.activeLink} onClick={(event) => handleClick(event, 'contact')}>
-                Contact
-              </NavLink>
+            <NavLink to="/#contact" activeClassName={styles.activeLink} onClick={(event) => handleClick(event, 'contact')}>
+              Contact
+            </NavLink>
           </li>
           <li>
-              <NavLink to={APP_ROUTES.PERSONAL_SPACE} activeClassName={styles.activeLink}>
-                Mon Espace
-              </NavLink>
+            {!user ?
+              <></>
+            :
+            <NavLink to={APP_ROUTES.PERSONAL_SPACE} activeClassName={styles.activeLink}>
+              Mon Espace
+            </NavLink>
+            }
           </li>
-          <li>{!user ? <NavLink to="/Connexion" className={({ isActive }) => (isActive ? styles.activeLink : undefined)}>Se connecter</NavLink> : <span tabIndex={0} role="button" onKeyUp={disconnect} onClick={disconnect}>Se déconnecter</span> }</li>
+          <li>
+            {!user ? 
+              <NavLink to="/Connexion" className={({ isActive }) => (isActive ? styles.activeLink : undefined)}>
+                <img src={modif} ></img>
+                </NavLink> 
+            : 
+              <span tabIndex={0} role="button" onKeyUp={disconnect} onClick={disconnect}>
+                Me déconnecter
+              </span> 
+            }
+          </li>
         </ul>
       </div>
     </header>

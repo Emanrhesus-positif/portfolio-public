@@ -1,7 +1,6 @@
 
 import React, { useEffect, useMemo, useState } from 'react';
 import { useForm } from 'react-hook-form';
-import * as PropTypes from 'prop-types';
 import { useNavigate } from 'react-router-dom';
 import { useFilePreview } from '../../../lib/customHooks';
 import styles from './ProjectForm.module.scss';
@@ -11,7 +10,7 @@ export const ProjectForm = ({ project, validate }) => {
 
   const navigate = useNavigate();
   const {
-    register, watch, formState, handleSubmit, reset,
+    register, watch, handleSubmit, reset,
   } = useForm({
     defaultValues: useMemo(() => ({
       title: project?.title,
