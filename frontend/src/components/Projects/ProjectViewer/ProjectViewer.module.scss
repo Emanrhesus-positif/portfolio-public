@@ -1,48 +1,59 @@
+.projectslink {
+	padding-top: var(--header-size);
+	margin-top: var(--header-size);
+	margin-bottom: var(--header-size);
+	margin-inline: auto;
 
-.projectslink{
-    padding-top: var(--header-size);
-    margin-top: auto;
-    margin-inline: auto;
-    .projectsViewer{
-        box-sizing: border-box;
-        display: flex;
-        flex-direction: row;
+	.projectsViewer {
+		box-sizing: border-box;
+		display: flex;
+		flex-direction: row;
 
-        margin: auto;
-        justify-content: center;
-        align-items: center;
-        color: var(--secondary-color);
+		margin: auto;
+		justify-content: center;
+		align-items: center;
+		color: var(--secondary-color);
 
-        img{
-            width: auto;
-        }
-        .projectItem {
-            display: none;
-            opacity: 0;
-        
-            &.current {
-              display: block;
-              opacity: 1;
-              animation-name: fadeIn;
-              animation-duration: 500ms;
-            }
-        }
-        button{
-            background-color: var(--secondary-color);
-            border: none;
-            font-size: 2rem;
-            cursor: pointer;
-        }
-        .buttonleft{
-            height:100%;
-        }
-        .buttonright{
-            height: 100%;
-        }
-    
-    }
+		img {
+			width: auto;
+		}
+
+		.projectItem {
+			width:0%;
+			display: none;
+			opacity: 0;
+
+			&.current {
+				width:100%;
+				display: block;
+				opacity: 1;
+				animation-name: fadeIn;
+				animation-duration: 500ms;
+			}
+		}
+
+		button {
+			border: none;
+			cursor: pointer;
+
+			height: 45rem;
+			width: 10rem;
+			background-color: transparent;
+			img {
+				width: 3rem;
+			}
+		}
+
+	}
 }
+
 @keyframes fadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
-  }
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+

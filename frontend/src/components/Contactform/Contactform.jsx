@@ -28,15 +28,23 @@ export const Contactform = () => {
     return (
         <div className={styles.Link}>
             <form id="contact" className={styles.contact} onSubmit={handleSubmit}>
-            <label for="name">Nom :</label>
-            <input id="name" type="text"value={name} onChange={(e) => setName(e.target.value)} placeholder="Nom" required />
-            <label for="email">E-mail :</label>
-            <input id="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email" required />
-            <label for="message">Message :</label>
-            <textarea id="message" value={message} onChange={(e) => setMessage(e.target.value)} placeholder="Message" required />
-            <button type="submit">Envoyer</button>
-        </form>
+                <label for="name">Nom :</label>
+                <input id="name" type="text" value={name} onChange={(e) => setName(e.target.value)} placeholder="Nom" required />
+                <label for="email">E-mail :</label>
+                <input id="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email" required />
+                <label for="message">Message :</label>
+                <textarea id="message" value={message} onChange={(e) => setMessage(e.target.value)} placeholder="Message" required />
+                <button type="submit">Envoyer</button>
+            </form>
+            <div className={styles.contactInfo}>
+                <h2>Contact</h2>
+                <p>Vous pouvez m'envoyer un message directement via le formulaire ou bien </p>
+                <p>me contacter par mail à l'adresse suivante : <a href="mailto:romain.bories09@gmail.com"></a> </p>
+                <p>Vous pouvez également me contacter par téléphone au 06 81 09 13 70</p>
+                <img src="www.image.com" alt="LinkedId"></img>
+                <img src="www.image.com" alt="GitHub"></img>
+            </div>
         </div>
-        
+
     );
 };

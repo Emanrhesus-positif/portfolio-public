@@ -48,7 +48,6 @@ export const ProjectViewer = () => {
 
   return (
     <div id="travaux" className={styles.projectslink}>
-      <br />
       <div className={styles.projectsViewer}>
         {loading ? (
           <h1>Chargement en cours...</h1>

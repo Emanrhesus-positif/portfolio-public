@@ -1,13 +1,10 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Work+Sans:wght@200&display=swap');
 
-
-main{
+main {
     display: flex;
     flex-direction: column;
-    margin-top: calc(var(--header-size) + 1rem);
     gap: 4rem;
-    background-image: url(../../assets/images/fond01.jpg), url(../../assets/images/fond02.jpg);
-    background-size: contain;
+    background-image: linear-gradient(to bottom, rgb(0, 0, 0), var(--secondary-color));
     background-repeat: no-repeat;
-    background-position: top, bottom;
 }

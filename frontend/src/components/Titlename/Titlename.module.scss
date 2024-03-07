@@ -1,9 +1,6 @@
 .Titlename {
-    background-color: var(--element-color);
     width: 100%;
-    margin: auto;
-    border-radius: 1rem;
-    box-shadow:  0 1rem 2rem rgba(0, 0, 0, 0.726);
+    margin-top: var(--header-size);
     text-align: center;
 
     font-family: "Plus Jakarta Sans";
@@ -11,13 +8,36 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    animation: appear 0.5s ease-in;
 
     h1 {
         font-weight: 600;
-        font-size: 3rem;
+        font-size: 5rem;
+    }
+    h2 {
+        font-weight: 400;
+        font-size: 4rem;
     }
     p {
-        font-size: 1rem;
+        font-size: 2rem;
     }
 
+}
+
+@keyframes appear {
+    0% {
+        transform: scaleY(0);
+    }
+    30%{
+        transform: scaleY(1);
+    }
+    70%{
+        transform: scaleX(0.9) scaleY(1.1) translateY(2rem);
+    }
+    90%{
+        transform: scaleX(1.1) scaleY(0.9) translateY(0);
+    }
+    100% {
+        transform: scaleX(1) scaleY(1);
+    }
 }

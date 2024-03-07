@@ -1,8 +1,10 @@
 .container{
     display: flex;
     flex-direction: row;
+    width: 100%;
     align-items: center;
     margin-top: var(--header-size);
+    margin-inline: auto;
     .sideMenu{
         display: flex;
         flex-direction: column;
@@ -18,7 +20,6 @@
             font-size: 16px;
           
           &:hover{
-              background-color: var(--accent-color);
               color: var(--primary-color);
           }
         }

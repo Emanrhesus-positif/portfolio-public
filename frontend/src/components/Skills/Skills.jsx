@@ -1,130 +1,102 @@
 import React, { useEffect, useRef, useState } from 'react';
 import styles from './Skills.module.scss';
+import cv from '../../assets/images/cv.webp';
 
 export const Skills = () => {
-    const htmlRef = useRef(null);
-    const cssRef = useRef(null);
-    const jsRef = useRef(null);
-    const reactRef = useRef(null);
-    const nodeRef = useRef(null);
-    const sassRef = useRef(null);
-    const optiRef = useRef(null);
+    const skillsRef = useRef(null);
 
-    const skills = [
-        { name: 'html', level: 90, ref: htmlRef },
-        { name: 'css', level: 70, ref: cssRef },
-        { name: 'javascript', level: 60, ref: jsRef },
-        { name: 'React.js', level: 80, ref: reactRef },
-        { name: 'Node.js', level: 60, ref: nodeRef },
-        { name: 'Sass', level: 80, ref: sassRef },
-        { name: 'optimisation de site', level: 80, ref: optiRef },
+    const frontSkills = [
+        { name: 'HTML', level: 60 },
+        { name: 'CSS / SCSS', level: 70 },
+        { name: 'javascript', level: 60 },
+        { name: 'React.js', level: 60 },
+    ];
+    const backSkills = [
+        { name: 'Node.js', level: 50 },
+        { name: 'MongoDB', level: 80 },
+        { name: 'MySQL', level: 60 },
+    ];
+    const projectSkills = [
+        { name: 'GitHub', level: 60 },
+        { name: 'Trello', level: 60 },
+        { name: 'Wave / Lighthouse / Heading maps', level: 70 },
+    ];
+    const designSkills = [
+        { name: 'Figma', level: 50 },
+        { name: 'Gimp', level: 40 },
     ];
 
-    const [isHTMLIntersecting, setHTMLIntersecting] = useState(false);
-    const [isCSSIntersecting, setCSSIntersecting] = useState(false);
-    const [isjsIntersecting, setjsIntersecting] = useState(false);
-    const [isreactIntersecting, setreactIntersecting] = useState(false);
-    const [isnodeIntersecting, setnodeIntersecting] = useState(false);
-    const [issassIntersecting, setsassIntersecting] = useState(false);
-    const [isoptiIntersecting, setoptiIntersecting] = useState(false);
+    const [isIntersecting, setIntersecting] = useState(false);
 
-useEffect(() => {
-    const observer = new IntersectionObserver(
-        ([entry]) => {
-            switch (entry.target) {
-                case htmlRef.current:
-                    setHTMLIntersecting(entry.isIntersecting);
-                    break;
-                case cssRef.current:
-                    setCSSIntersecting(entry.isIntersecting);
-                    break;
-                case jsRef.current:
-                    setjsIntersecting(entry.isIntersecting);
-                    break;
-                case reactRef.current:
-                    setreactIntersecting(entry.isIntersecting);
-                    break;
-                case nodeRef.current:
-                    setnodeIntersecting(entry.isIntersecting);
-                    break;
-                case sassRef.current:
-                    setsassIntersecting(entry.isIntersecting);
-                    break;
-                case optiRef.current:
-                    setoptiIntersecting(entry.isIntersecting);
-                    break;
-                default:
-                    break;
-            }
-        },
-        {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0.1
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => setIntersecting(entry.isIntersecting),
+
+        );
+
+        if (skillsRef.current) {
+            observer.observe(skillsRef.current);
         }
-    );
 
-    if (htmlRef.current) {
-        observer.observe(htmlRef.current);
-    }
-    if (cssRef.current) {
-        observer.observe(cssRef.current);
-    }
-    if (jsRef.current) {
-        observer.observe(jsRef.current);
-    }
-    if (reactRef.current) {
-        observer.observe(reactRef.current);
-    }
-    if (nodeRef.current) {
-        observer.observe(nodeRef.current);
-    }
-    if (sassRef.current) {
-        observer.observe(sassRef.current);
-    }
-    if (optiRef.current) {
-        observer.observe(optiRef.current);
-    }
+        return () => {
+            observer.disconnect();
+        };
+    }, []);
 
-    return () => {
-        observer.disconnect();
-    };
-}, []);
-    
-    const isIntersecting = (ref) => {
-        switch (ref) {
-            case htmlRef:
-                return isHTMLIntersecting;
-            case cssRef:
-                return isCSSIntersecting;
-            case jsRef:
-                return isjsIntersecting;
-            case reactRef:
-                return isreactIntersecting;
-            case nodeRef:
-                return isnodeIntersecting;
-            case sassRef:
-                return issassIntersecting;
-            case optiRef:
-                return isoptiIntersecting;
-            default:
-                return false;
-        }
-    };
-    
     return (
-        <div className={styles.Skills}>
-            <h2>Competences</h2>
-            {skills.map(skill => (
-                <div className={styles.skillContainer}>
-                    <p>{skill.name}</p>
-                    <div
-                        className={`${styles.bar} ${isIntersecting(skill.ref) ? styles.filled : ''}`}
-                        ref={skill.ref}
-                        style={{ '--fill-percent': skill.level / 100 }}
-                    ></div>
-                </div>
-            ))}
+        <div className={styles.Container}>
+            <div className={styles.Skills} ref={skillsRef}>
+                <h2>Competences</h2>
+                <h3>Front-End</h3>
+                {frontSkills.map(skill => (
+                    <div className={styles.skillContainer}>
+                        <p>{skill.name}</p>
+                        <div className={styles.barContainer}>
+                            <div
+                                className={`${styles.bar} ${isIntersecting ? styles.filled : ''}`}
+                                style={{ '--fill-percent': `${skill.level}%` }}
+                            ></div>
+                        </div>
+                    </div>
+                ))}
+                <h3>Back-End</h3>
+                {backSkills.map(skill => (
+                    <div className={styles.skillContainer}>
+                        <p>{skill.name}</p>
+                        <div className={styles.barContainer}>
+                            <div
+                                className={`${styles.bar} ${isIntersecting ? styles.filled : ''}`}
+                                style={{ '--fill-percent': `${skill.level}%` }}
+                            ></div>
+                        </div>
+                    </div>
+                ))}
+                <h3>Gestion de Projet</h3>
+                {projectSkills.map(skill => (
+                    <div className={styles.skillContainer}>
+                        <p>{skill.name}</p>
+                        <div className={styles.barContainer}>
+                            <div
+                                className={`${styles.bar} ${isIntersecting ? styles.filled : ''}`}
+                                style={{ '--fill-percent': `${skill.level}%` }}
+                            ></div>
+                        </div>
+                    </div>
+                ))}
+                <h3>Design</h3>
+                {designSkills.map(skill => (
+                    <div className={styles.skillContainer}>
+                        <p>{skill.name}</p>
+                        <div className={styles.barContainer}>
+                            <div
+                                className={`${styles.bar} ${isIntersecting ? styles.filled : ''}`}
+                                style={{ '--fill-percent': `${skill.level}%` }}
+                            ></div>
+                        </div>
+                    </div>
+                ))}
+            </div>
+            <img src={cv} ></img>
         </div>
     )
 }
