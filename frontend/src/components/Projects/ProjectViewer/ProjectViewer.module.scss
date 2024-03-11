@@ -1,6 +1,5 @@
 .projectslink {
 	padding-top: var(--header-size);
-	margin-top: var(--header-size);
 	margin-bottom: var(--header-size);
 	margin-inline: auto;
 
@@ -10,6 +9,7 @@
 		flex-direction: row;
 
 		margin: auto;
+		margin-top: 1rem;
 		justify-content: center;
 		align-items: center;
 		color: var(--secondary-color);
@@ -57,3 +57,25 @@
 	}
 }
 
+@media screen and (max-width: 1300px) {
+	.projectsViewer {
+		flex-direction: column;
+		gap: 2rem;
+		img {
+			width: 90%;
+		}
+		.projectItem {
+			width: 100%;
+			display: block;
+			opacity: 1;
+		}
+		button {
+			height: 10rem;
+			width: 100%;
+			img {
+				width: 2rem;
+			}
+		}
+	}
+	
+}

@@ -112,7 +112,7 @@ export const SignIn = ({ setUser }) => {
               Se connecter
             </span>
           </button>
-          <span>OU</span>
+          {/* <span>OU</span>
           <button
             type="submit"
             className="
@@ -128,7 +128,7 @@ export const SignIn = ({ setUser }) => {
             <span>
               {'S\'inscrire'}
             </span>
-          </button>
+          </button> */}
         </div>
 
       </div>

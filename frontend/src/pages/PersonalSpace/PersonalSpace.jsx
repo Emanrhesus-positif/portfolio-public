@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { ProjectForm } from "../../components/Projects/ProjectForm/ProjectForm";
-import { ProjectViewer } from "../../components/Projects/ProjectViewer/ProjectViewer";
+import { ProjectsShow } from '../../components/Projects/ProjectsShow/ProjectsShow';
 import styles from './PersonalSpace.module.scss';
 
 export const PersonalSpace = () => {
@@ -12,7 +12,11 @@ export const PersonalSpace = () => {
 	return (
 		<div className={styles.container}>
 			<div className={styles.sideMenu}>
-				<button onClick={() => { setAddProject(true); setViewProject(false) }}>Ajouter un projet</button>
+				<button onClick={() => { 
+					setAddProject(true); 
+					setViewProject(false);
+					setCreated(false);
+				}}>Ajouter un projet</button>
 				<button onClick={() => { setAddProject(false); setViewProject(true) }}>Voir les projets</button>
 			</div>
 			<div className={styles.content}>
@@ -24,12 +28,12 @@ export const PersonalSpace = () => {
 						</>
 					) : (
 						<div className={styles.Created}>
-							<p>Projet uploadé</p>
+							<p>Projet uploadé avec Succès !</p>
 						</div>
 					)
 				) : null}
 				{viewProject ? (
-					<ProjectViewer />
+					<ProjectsShow />
 				) : null}
 			</div>
 		</div>

@@ -3,7 +3,7 @@ const SharpMulter = require('sharp-multer');
 
 const options = {
   fileFormat: 'webp',
-  quality: 60,
+  quality: 90,
   resize: { width: 800, resizeMode: 'contain'},
   useTimestamp: true,
 };

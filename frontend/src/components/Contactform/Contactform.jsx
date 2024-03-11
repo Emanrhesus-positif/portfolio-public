@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import github from '../../assets/images/github.svg';
+import linkedin from '../../assets/images/linkedin.svg'
 import styles from './Contactform.module.scss';
 import { API_ROUTES } from '../../utils/constants';
 
@@ -31,7 +33,7 @@ export const Contactform = () => {
                 <label for="name">Nom :</label>
                 <input id="name" type="text" value={name} onChange={(e) => setName(e.target.value)} placeholder="Nom" required />
                 <label for="email">E-mail :</label>
-                <input id="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email" required />
+                <input id="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="mail@mail.com" required />
                 <label for="message">Message :</label>
                 <textarea id="message" value={message} onChange={(e) => setMessage(e.target.value)} placeholder="Message" required />
                 <button type="submit">Envoyer</button>
@@ -39,10 +41,13 @@ export const Contactform = () => {
             <div className={styles.contactInfo}>
                 <h2>Contact</h2>
                 <p>Vous pouvez m'envoyer un message directement via le formulaire ou bien </p>
-                <p>me contacter par mail à l'adresse suivante : <a href="mailto:romain.bories09@gmail.com"></a> </p>
+                <p>me contacter par mail à l'adresse suivante : <a href="mailto:romain.bories09@gmail.com">romain.bories09@gmail.com</a> </p>
                 <p>Vous pouvez également me contacter par téléphone au 06 81 09 13 70</p>
-                <img src="www.image.com" alt="LinkedId"></img>
-                <img src="www.image.com" alt="GitHub"></img>
+                <div className={styles.links}>
+                <a href="https://www.linkedin.com/in/romain-bories-404386113/"  target="_blank" rel="noreferrer"><img src={linkedin} alt="LinkedIn"></img></a>
+                <a href="https://github.com/Emanrhesus-positif/"  target="_blank" rel="noreferrer"><img src={github} alt="GitHub"></img></a>
+                </div>
+                
             </div>
         </div>
 

@@ -53,3 +53,39 @@ header{
 }
 
 
+@media screen and (max-width: 1300px) {
+    header{
+        height:5rem;
+        align-items: baseline;
+        .container{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0;
+            height: auto;
+        
+        }
+        img{
+            width:3rem;
+            height:3rem;
+        }
+        ul {
+            flex-wrap: wrap;
+            font-size: small;
+
+            li{
+                padding-inline: 0.5rem;
+                img{
+                    width: 1.5rem;
+                }
+            }
+        }
+        
+    }
+    .downed{
+        display: none;
+    }
+    
+}
+
+

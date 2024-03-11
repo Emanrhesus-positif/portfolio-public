@@ -6,9 +6,15 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     background-color: var(--element-color);
     padding:1rem;
+    font-family: var(--font-style);
+
     img{
         height: 70rem;
+        &.onclick{
+            height: 100rem;
+        }
     }
+
     .Skills {
         display: flex;
         flex-direction: column;
@@ -54,3 +60,21 @@
     }
 }
 
+@media screen and (max-width: 1300px){
+	.Container {
+        flex-direction: column;
+        gap: 4rem;
+        align-items: center;
+        .Skills{
+            max-width: 90%;
+            width:90%;
+            h2 {
+                font-size:2rem;
+            }
+        }
+        img{
+            max-width: 90%;
+            height: auto;
+        }
+    }
+}

@@ -38,3 +38,19 @@ exports.login = async (req, res, next) => {
     res.status(500).json({ error });
   }
 };
+
+exports.checkUp = async (req, res, next) => {
+  try {
+    const token = req.headers.authorization.split(' ')[1];
+    const decodedToken = jwt.verify(token, process.env.SECRET_KEY);
+    const userId = decodedToken.userId;
+    if (req.body.userId && req.body.userId !== userId) {
+      return res.status(401).json({ error: 'Utilisateur non valide' });
+    } else {
+      console.log('user valide');
+      return next();    
+    }
+  } catch (error) {
+    res.status(401).json({ error });
+  }
+};
