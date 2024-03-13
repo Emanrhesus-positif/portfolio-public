@@ -7,7 +7,6 @@ exports.createProject = (req, res) => {
         delete projectObject._id;
         const project = new Project({
             ...projectObject,
-            // imageUrl: `${req.protocol}://${req.get('host')}/images/${req.file.filename}`,
             imageUrl: `${process.env.SITE_URL}/images/${req.file.filename}`,
         });
         project.save().then(
@@ -47,7 +46,7 @@ exports.getProjectById = (req, res) => {
 exports.updateProject = (req, res) => {
     const projectObject = req.file ? {
         ...JSON.parse(req.body.project),
-        imageUrl: `${req.protocol}://${req.get('host')}/images/${req.file.filename}`,
+        imageUrl: `${process.env.SITE_URL}/images/${req.file.filename}`,
       } : { ...req.body };
     
       delete projectObject._userId;
