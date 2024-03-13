@@ -23,5 +23,8 @@
     "nodemailer": "^6.9.10",
     "sharp": "^0.33.2",
     "sharp-multer": "^0.3.2"
+  },
+  "devDependencies": {
+    "prisma": "^5.11.0"
   }
 }
