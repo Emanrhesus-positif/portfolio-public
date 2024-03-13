@@ -17,7 +17,7 @@ mongoose.connect(
   },
 )
 .then(() => console.log('Connexion à BDD réussie !'))
-.catch(() => console.log('Connexion à BDD échouée !'));
+.catch(() => console.log('Connexion à BDD échouée !' + process.env.DB_SECURE_URL));
 
 app.use('/images', express.static(path.join(__dirname, 'images')));
 app.use(express.json());
