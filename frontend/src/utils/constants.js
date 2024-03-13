@@ -1,4 +1,4 @@
-const API_URL = 'portfolio-production-3092.up.railway.app';
+const API_URL = 'https://portfolio-production-3092.up.railway.app';
 
 export const API_ROUTES = {
   SIGN_UP: `${API_URL}/api/auth/signup`,
