@@ -3,12 +3,10 @@
   "version": "1.0.0",
   "description": "Portfolio Développeur Web Romain Bories",
   "main": "index.js",
-  "author": "emanrhesus-positif",
-  "license": "MIT",
   "scripts": {
     "start": "node server.js"
   },
-  "author": "",
+  "author": "emanrhesus-positif",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.1.1",
