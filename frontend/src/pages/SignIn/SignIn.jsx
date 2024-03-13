@@ -44,29 +44,29 @@ export const SignIn = ({ setUser }) => {
     }
   };
 
-  // const signUp = async () => {
-  //   try {
-  //     setIsLoading(true);
-  //     const response = await axios({
-  //       method: 'POST',
-  //       url: API_ROUTES.SIGN_UP,
-  //       data: {
-  //         email,
-  //         password,
-  //       },
-  //     });
-  //     if (!response?.data) {
-  //       console.log('Something went wrong during signing up: ', response);
-  //       return;
-  //     }
-  //     setNotification({ error: false, message: 'Votre compte a bien été créé, vous pouvez vous connecter' });
-  //   } catch (err) {
-  //     setNotification({ error: true, message: err.message });
-  //     console.log('Some error occured during signing up: ', err);
-  //   } finally {
-  //     setIsLoading(false);
-  //   }
-  // };
+  const signUp = async () => {
+    try {
+      setIsLoading(true);
+      const response = await axios({
+        method: 'POST',
+        url: API_ROUTES.SIGN_UP,
+        data: {
+          email,
+          password,
+        },
+      });
+      if (!response?.data) {
+        console.log('Something went wrong during signing up: ', response);
+        return;
+      }
+      setNotification({ error: false, message: 'Votre compte a bien été créé, vous pouvez vous connecter' });
+    } catch (err) {
+      setNotification({ error: true, message: err.message });
+      console.log('Some error occured during signing up: ', err);
+    } finally {
+      setIsLoading(false);
+    }
+  };
   const errorClass = notification.error ? styles.Error : null;
   return (
     <div className={`${styles.SignIn} container`}>
@@ -110,7 +110,7 @@ export const SignIn = ({ setUser }) => {
               Se connecter
             </span>
           </button>
-          {/* <span>OU</span>
+          <span>OU</span>
           <button
             type="submit"
             className="
@@ -126,7 +126,7 @@ export const SignIn = ({ setUser }) => {
             <span>
               {'S\'inscrire'}
             </span>
-          </button> */}
+          </button>
         </div>
 
       </div>
