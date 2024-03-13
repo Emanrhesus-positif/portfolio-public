@@ -47,7 +47,6 @@ exports.checkUp = async (req, res, next) => {
     if (req.body.userId && req.body.userId !== userId) {
       return res.status(401).json({ error: 'Utilisateur non valide' });
     } else {
-      console.log('user valide');
       return next();    
     }
   } catch (error) {

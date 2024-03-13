@@ -16,8 +16,8 @@ mongoose.connect(
     useUnifiedTopology: true,
   },
 )
-.then(() => console.log('Connexion à MongoDB réussie !'))
-.catch(() => console.log('Connexion à MongoDB échouée !'));
+.then(() => console.log('Connexion à BDD réussie !'))
+.catch(() => console.log('Connexion à BDD échouée !'));
 
 app.use('/images', express.static(path.join(__dirname, 'images')));
 app.use(express.json());

@@ -1,7 +1,6 @@
 const Project = require('../models/project');
 const fs = require('fs');
 exports.createProject = (req, res) => {
-    console.log(req.body);
     if (req.body.project) {
         const projectObject = JSON.parse(req.body.project);
         delete projectObject._id;
