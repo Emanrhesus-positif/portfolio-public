@@ -29,6 +29,7 @@ exports.createProject = (req, res) => {
 };
 
 exports.getAllProjects = (req, res) => {
+    console.log('AllProjects called');
     Project.find()
         .then(projects => res.status(200).json(projects))
         .catch(error => res.status(400).json({ error }));
