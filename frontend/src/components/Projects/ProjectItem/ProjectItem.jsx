@@ -2,10 +2,6 @@ import React from 'react';
 import styles from './ProjectItem.module.scss';
 
 export const ProjectItem = ({ project, auth }) => {
-
-  const adminVerif = () => {
-    
-  }
   
   return (
     <div className={styles.ProjectItem}>

@@ -96,7 +96,7 @@ export const Skills = () => {
                     </div>
                 ))}
             </div>
-            <img src={cv} ></img>
+            <img src={cv} alt="curriculum-vitae Romain Bories"></img>
         </div>
     )
 }

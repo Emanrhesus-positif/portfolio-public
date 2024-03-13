@@ -4,7 +4,6 @@ import { useEffect, useState } from 'react';
 import { APP_ROUTES } from '../../utils/constants';
 import styles from './Header.module.scss';
 import profilePic from '../../assets/images/ProfilePic.webp';
-import modif from '../../assets/images/modif.svg';
 import home from '../../assets/images/home.svg';
 import me from '../../assets/images/me.svg';
 import works from '../../assets/images/works.svg';
@@ -53,7 +52,7 @@ export const Header = ({ user, setUser }) => {
   return (
     <header className={headerClass}>
   <div className="container">
-    <img src={profilePic} alt="Photo romain bories" />
+    <img src={profilePic} alt="portrait romain bories" />
     <ul>
       <li className={styles.Home}>
         <NavLink to="/" end className={({ isActive }) => (isActive ? styles.activeLink : undefined)}>
@@ -64,21 +63,21 @@ export const Header = ({ user, setUser }) => {
       </li>
       <li className={styles.Me}>
         <NavLink to="/#a-propos" activeClassName={styles.activeLink} onClick={(event) => handleClick(event, 'a-propos')}>
-        <img src={me} />
+        <img src={me} alt="A propos de moi" />
           <span className={styles.visuallyHidden}>Qui-suis-je</span>
           
         </NavLink>
       </li>
       <li className={styles.Works}>
         <NavLink to="/#travaux" activeClassName={styles.activeLink} onClick={(event) => handleClick(event, 'travaux')}>
-        <img src={works} />
+        <img src={works} alt="Mes travaux"/>
           <span className={styles.visuallyHidden}>Travaux</span>
           
         </NavLink>
       </li>
       <li className={styles.Contact}>
         <NavLink to="/#contact" activeClassName={styles.activeLink} onClick={(event) => handleClick(event, 'contact')}>
-        <img src={contact} />
+        <img src={contact} alt="Me contacter"/>
           <span className={styles.visuallyHidden}>Contact</span>
           
         </NavLink>
@@ -88,7 +87,7 @@ export const Header = ({ user, setUser }) => {
           <></>
         :
         <NavLink to={APP_ROUTES.PERSONAL_SPACE} activeClassName={styles.activeLink}>
-          <img src={mySpace} />
+          <img src={mySpace} alt="Mon espace"/>
           <span className={styles.visuallyHidden}>Mon Espace</span>
           
         </NavLink>
@@ -97,10 +96,10 @@ export const Header = ({ user, setUser }) => {
       <li className={styles.Login}>
         {!user ? 
           <NavLink to="/Connexion" >
-            <img src={login} ></img>
+            <img src={login} alt="Connexion"></img>
             </NavLink> 
         : <li className={styles.logout} tabIndex={0} role="button" onKeyUp={disconnect} onClick={disconnect}>
-            <img src={logout} />
+            <img src={logout} alt="Déconnexion"/>
             <span  className={styles.visuallyHidden} >
             Me déconnecter
           </span>

@@ -1,7 +1,9 @@
 {
   "name": "portfolio",
   "version": "1.0.0",
-  "description": "",
+  "description": "Portfolio Développeur Web Romain Bories",
+  "private": true,
+  "homepage": "https://www.emanrhesus.fr",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

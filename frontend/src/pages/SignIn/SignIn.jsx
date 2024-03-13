@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import * as PropTypes from 'prop-types';
 import { useNavigate } from 'react-router-dom';
 import { API_ROUTES, APP_ROUTES } from '../../utils/constants';
 import { useUser } from '../../lib/customHooks';
@@ -45,29 +44,29 @@ export const SignIn = ({ setUser }) => {
     }
   };
 
-  const signUp = async () => {
-    try {
-      setIsLoading(true);
-      const response = await axios({
-        method: 'POST',
-        url: API_ROUTES.SIGN_UP,
-        data: {
-          email,
-          password,
-        },
-      });
-      if (!response?.data) {
-        console.log('Something went wrong during signing up: ', response);
-        return;
-      }
-      setNotification({ error: false, message: 'Votre compte a bien été créé, vous pouvez vous connecter' });
-    } catch (err) {
-      setNotification({ error: true, message: err.message });
-      console.log('Some error occured during signing up: ', err);
-    } finally {
-      setIsLoading(false);
-    }
-  };
+  // const signUp = async () => {
+  //   try {
+  //     setIsLoading(true);
+  //     const response = await axios({
+  //       method: 'POST',
+  //       url: API_ROUTES.SIGN_UP,
+  //       data: {
+  //         email,
+  //         password,
+  //       },
+  //     });
+  //     if (!response?.data) {
+  //       console.log('Something went wrong during signing up: ', response);
+  //       return;
+  //     }
+  //     setNotification({ error: false, message: 'Votre compte a bien été créé, vous pouvez vous connecter' });
+  //   } catch (err) {
+  //     setNotification({ error: true, message: err.message });
+  //     console.log('Some error occured during signing up: ', err);
+  //   } finally {
+  //     setIsLoading(false);
+  //   }
+  // };
   const errorClass = notification.error ? styles.Error : null;
   return (
     <div className={`${styles.SignIn} container`}>
@@ -134,7 +133,3 @@ export const SignIn = ({ setUser }) => {
     </div>
   );
 }
-
-SignIn.propTypes = {
-  setUser: PropTypes.func.isRequired,
-};

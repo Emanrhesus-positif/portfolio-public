@@ -6,7 +6,6 @@ import update from '../../../assets/images/update.svg';
 import { ProjectItem } from '../ProjectItem/ProjectItem';
 import { ProjectForm } from "../ProjectForm/ProjectForm";
 import { getProjects, deleteProject } from '../../../lib/common';
-import { from } from 'form-data';
 
 export const ProjectsShow = () => {
     const [projects, setProjects] = useState(null);

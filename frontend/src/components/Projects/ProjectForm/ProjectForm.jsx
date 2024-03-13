@@ -1,14 +1,12 @@
 
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useMemo } from 'react';
 import { useForm } from 'react-hook-form';
-import { useNavigate } from 'react-router-dom';
 import { useFilePreview } from '../../../lib/customHooks';
 import styles from './ProjectForm.module.scss';
 import { updateProject, addProject } from '../../../lib/common';
 
 export const ProjectForm = ({ project, validate }) => {
 
-  const navigate = useNavigate();
   const {
     register, watch, handleSubmit, reset,
   } = useForm({
