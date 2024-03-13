@@ -2,11 +2,11 @@
   "name": "portfolio",
   "version": "1.0.0",
   "description": "Portfolio Développeur Web Romain Bories",
-  "private": true,
-  "homepage": "https://www.emanrhesus.fr",
   "main": "index.js",
+  "author": "emanrhesus-positif",
+  "license": "MIT",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js"
   },
   "author": "",
   "license": "ISC",
