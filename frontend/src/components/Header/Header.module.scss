@@ -1,5 +1,6 @@
 
 header{
+    transition: transform 0.3s ease-in;
     box-sizing: border-box;
     position:fixed;
     z-index: 2;
@@ -8,11 +9,12 @@ header{
     padding: 1rem;
     display: flex;
     align-items: center;
-    font-family: "Plus Jakarta Sans";
+    font-family: var(--font-style);
     background-color: var(--primary-color);
     color: var(--accent-color);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 100);
     max-height: var(--header-size);
+
 
     div {
         display: flex;
@@ -31,18 +33,24 @@ header{
         display: flex;
         margin: auto;
         align-items: center;
+        justify-content: space-between;
         margin-right: 0;
 
         li {
+            display: flex;
+            align-items: center; 
+            justify-content: center;
             padding-inline: 1rem;
             list-style-type: none;
             img{
-                width: 2rem;
-
+                height: 2rem;
+                vertical-align: middle;
             }
             a {
                 text-decoration: none;
                 color: var(--text-color);
+                margin: 0;
+                vertical-align: middle;
             }
             a.activeLink {
                 font-weight: bold;
@@ -50,6 +58,10 @@ header{
             }
         }
     }
+}
+.HeaderHide {
+    transform: translateY(-100%);
+    transition: transform 0.3s ease-in-out;
 }
 
 
@@ -74,18 +86,37 @@ header{
             font-size: small;
 
             li{
+                .visuallyHidden{
+                    display: none;
+                }
                 padding-inline: 0.5rem;
                 img{
                     width: 1.5rem;
                 }
+                .Home{
+                    background-image: url(../../assets/images/home.svg);
+                }
+                .Me{
+                    background-image: url(../../assets/images/me.svg);
+                }
+                .Works{
+                    background-image: url(../../assets/images/works.svg);
+                }
+                .Contact{
+                    background-image: url(../../assets/images/contact.svg);
+                }
+                .MySpace{
+                    background-image: url(../../assets/images/edit.svg);
+                }
+                .Logout{
+                    background-image: url(../../assets/images/logout.svg);
+                }
+                .Login{
+                    background-image: url(../../assets/images/login.svg);
+                }
             }
         }
-        
     }
-    .downed{
-        display: none;
-    }
-    
 }
 
 

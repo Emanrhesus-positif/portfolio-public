@@ -26,7 +26,6 @@ export const ProjectForm = ({ project, validate }) => {
   const file = watch(['file']);
   const [filePreview] = useFilePreview(file);
   const onSubmit = async (data) => {
-    // When we create a new project
     if (!project) {
       if (!data.file[0]) {
         alert('Vous devez ajouter une image');
@@ -40,7 +39,7 @@ export const ProjectForm = ({ project, validate }) => {
     } else {
       const updatedProject = await updateProject(data, data.id);
       if (!updatedProject.error) {
-        navigate('/');
+        validate(true);
       } else {
         alert(updatedProject.message);
       }

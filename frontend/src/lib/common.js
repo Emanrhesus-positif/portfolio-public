@@ -108,11 +108,11 @@ export async function updateProject(data, id) {
 
   let newData;
   const project = {
+    userId,
     title: data.title,
     description: data.description,
     gitHubUrl: data.gitHubUrl,
   };
-  console.log(data.file[0]);
   if (data.file[0]) {
     newData = new FormData();
     newData.append('project', JSON.stringify(project));
@@ -128,7 +128,6 @@ export async function updateProject(data, id) {
       data: newData,
       headers: {
         Authorization: `Bearer ${localStorage.getItem('token')}`,
-        ContentType: 'multipart/form-data',
       },
     });
     return newProject;

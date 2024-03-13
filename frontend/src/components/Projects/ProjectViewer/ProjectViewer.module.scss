@@ -1,7 +1,11 @@
 .projectslink {
+	position: relative;
 	padding-top: var(--header-size);
 	margin-bottom: var(--header-size);
+	justify-content: space-between;
 	margin-inline: auto;
+	width:90%;
+	height: 100%;
 
 	.projectsViewer {
 		box-sizing: border-box;
@@ -11,7 +15,8 @@
 		margin: auto;
 		margin-top: 1rem;
 		justify-content: center;
-		align-items: center;
+		align-items: stretch;
+		height: 100%;
 		color: var(--secondary-color);
 
 		img {
@@ -33,15 +38,23 @@
 		}
 
 		button {
-			border: none;
-			cursor: pointer;
-
-			height: 45rem;
-			width: 10rem;
-			background-color: transparent;
+			align-self: stretch; // Ajouté pour que les boutons prennent toute la hauteur
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: none;
+        cursor: pointer;
+        background-color: transparent;
 			img {
 				width: 3rem;
 			}
+		}
+		.buttonleft {
+			left: 0;
+		}
+	
+		.buttonright {
+			right: 0;
 		}
 
 	}
@@ -58,24 +71,44 @@
 }
 
 @media screen and (max-width: 1300px) {
-	.projectsViewer {
-		flex-direction: column;
-		gap: 2rem;
-		img {
-			width: 90%;
-		}
-		.projectItem {
-			width: 100%;
-			display: block;
-			opacity: 1;
-		}
-		button {
-			height: 10rem;
-			width: 100%;
-			img {
-				width: 2rem;
-			}
-		}
-	}
-	
+    .projectsViewer {
+        flex-direction: column;
+
+        .projectItem {
+            position: relative;
+            flex-direction: column;
+            width: 100%;
+            display: block;
+            opacity: 1;
+        }
+
+        button {
+            position: absolute;
+            top: calc(var(--header-size) / 1.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: none;
+            cursor: pointer;
+            background-color: transparent;
+
+            img {
+                width: 3rem;
+                filter: invert(100%);
+            }
+        }
+
+        .buttonleft {
+            left: 0;
+			z-index: 1;
+        }
+
+        .buttonright {
+            right: 0;
+        }
+
+        img {
+            max-width: 50%;
+        }
+    }
 }

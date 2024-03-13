@@ -2,6 +2,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-image: linear-gradient(to bottom, rgb(0, 0, 0), var(--secondary-color));
+    background-repeat: no-repeat;
 }
 
 .Notification {

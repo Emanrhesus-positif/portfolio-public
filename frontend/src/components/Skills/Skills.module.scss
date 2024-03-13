@@ -30,8 +30,7 @@
         }
         .barContainer{
             width: 100%;
-            background-color: azure;
-            border-color: blue;
+            background-color: var(--text-color);
         }
         .filled {
             animation: fill 1s forwards;
