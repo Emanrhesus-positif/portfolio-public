@@ -1,12 +1,14 @@
 const Project = require('../models/project');
 const fs = require('fs');
+const dotenv = require('dotenv');
 exports.createProject = (req, res) => {
     if (req.body.project) {
         const projectObject = JSON.parse(req.body.project);
         delete projectObject._id;
         const project = new Project({
             ...projectObject,
-            imageUrl: `${req.protocol}://${req.get('host')}/images/${req.file.filename}`,
+            // imageUrl: `${req.protocol}://${req.get('host')}/images/${req.file.filename}`,
+            imageUrl: `${process.env.SITE_URL}/images/${req.file.filename}`,
         });
         project.save().then(
             () => {
