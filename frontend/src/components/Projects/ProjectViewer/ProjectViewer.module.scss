@@ -73,6 +73,7 @@
 @media screen and (max-width: 1300px) {
     .projectsViewer {
         flex-direction: column;
+		height: auto;
 
         .projectItem {
             position: relative;
@@ -84,7 +85,7 @@
 
         button {
             position: absolute;
-            top: calc(var(--header-size) / 1.5);
+            top: calc(var(--header-size) + 4rem);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -107,8 +108,5 @@
             right: 0;
         }
 
-        img {
-            max-width: 50%;
-        }
     }
 }
