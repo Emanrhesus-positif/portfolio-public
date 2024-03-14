@@ -11,10 +11,9 @@ header{
     align-items: center;
     font-family: var(--font-style);
     background-color: var(--primary-color);
-    color: var(--accent-color);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 100);
     max-height: var(--header-size);
-
+    backdrop-filter: blur(5px);
 
     div {
         display: flex;
