@@ -48,7 +48,6 @@ export const Contactform = () => {
                         <a href="https://www.linkedin.com/in/romain-bories-404386113/" target="_blank" rel="noreferrer"><img src={linkedin} alt="LinkedIn"></img></a>
                         <a href="https://github.com/Emanrhesus-positif/" target="_blank" rel="noreferrer"><img src={github} alt="GitHub"></img></a>
                     </div>
-
                 </div>
             </div>
         </div>
