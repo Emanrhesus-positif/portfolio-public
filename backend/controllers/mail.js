@@ -6,7 +6,7 @@ exports.sendFormDataInMail = async (req, res) => {
   try {
     await sendMail({
       from: 'portfolio-contact@emanrhesus.fr',
-      to: 'portfolio-contact@emanrhesus.fr',
+      to: 'romain.bories09@gmail.com',
       subject: `New message from ${name}`,
       text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
       html: `<p>Name: ${name}</p><p>Email: ${email}</p><p>Message: ${message}</p>`,
