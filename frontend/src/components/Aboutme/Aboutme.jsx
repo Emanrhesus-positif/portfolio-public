@@ -22,7 +22,7 @@ export const Aboutme = () => {
         </p>
         <br />
         <p>
-          Actuellement à la recherche d'une entreprise aux alentours d'Orléans pour effectuer une alternance et préparer un Bac +3 ( avec un rythme de 3 semaines en entreprise et 1 semaine en école )
+          Actuellement à la recherche d'une entreprise aux alentours d'Orléans pour effectuer une alternance et préparer un Bac +3 (avec un rythme de 3 semaines en entreprise et 1 semaine en école)
         </p>
       </section>
 

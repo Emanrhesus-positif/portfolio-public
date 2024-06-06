@@ -7,14 +7,14 @@ exports.sendFormDataInMail = async (req, res) => {
     await sendMail({
       from: 'portfolio-contact@emanrhesus.fr',
       to: 'romain.bories09@gmail.com',
-      subject: `New message from ${name}`,
+      subject: `Portfolio Contact ${name}`,
       text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
       html: `<p>Name: ${name}</p><p>Email: ${email}</p><p>Message: ${message}</p>`,
     });
 
-    res.status(200).json({ message: 'Email sent successfully.' });
+    res.status(200).json({ message: 'Message envoyé' });
   } catch (error) {
     console.error(error);
-    res.status(500).json({ message: 'There was an error sending the email.' });
+    res.status(500).json({ message: `Erreur lors de l'envoi du mail` });
   }
 };
