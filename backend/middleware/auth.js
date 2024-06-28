@@ -1,6 +1,7 @@
 const jwt = require('jsonwebtoken');
 require('dotenv').config();
 
+//check the token validity and extract the userId from it to add it to the request object for further use in the controllers
 module.exports = (req, res, next) => {
   try {
     const token = req.headers.authorization.split(' ')[1];

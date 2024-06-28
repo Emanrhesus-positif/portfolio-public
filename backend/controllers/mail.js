@@ -1,5 +1,6 @@
 const sendMail = require('../middleware/mail');
 
+//send an email from form data with nodemailer middleware
 exports.sendFormDataInMail = async (req, res) => {
   const { name, email, message } = req.body;
 

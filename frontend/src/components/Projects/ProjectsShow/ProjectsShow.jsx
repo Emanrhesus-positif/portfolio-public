@@ -7,6 +7,7 @@ import { ProjectItem } from '../ProjectItem/ProjectItem';
 import { ProjectForm } from "../ProjectForm/ProjectForm";
 import { getProjects, deleteProject } from '../../../lib/common';
 
+// Component to display the projects in the admin panel
 export const ProjectsShow = () => {
     const [projects, setProjects] = useState(null);
     const [created, setCreated] = useState(false);

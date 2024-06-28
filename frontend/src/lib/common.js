@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { API_ROUTES } from '../utils/constants';
 
+//
 function formatProjects(projectArray) {
   return projectArray.map((project) => {
     const newProject = { ...project };
@@ -9,15 +10,17 @@ function formatProjects(projectArray) {
   });
 }
 
+//token and userId are stored in the local storage
 export function storeInLocalStorage(token, userId) {
   localStorage.setItem('token', token);
   localStorage.setItem('userId', userId);
 }
-
+//get the token and userId from the local storage
 export function getFromLocalStorage(item) {
   return localStorage.getItem(item);
 }
 
+//get the user from the local storage
 export async function getAuthenticatedUser() {
   const defaultReturnObject = { authenticated: false, user: null };
   try {
@@ -33,6 +36,7 @@ export async function getAuthenticatedUser() {
   }
 }
 
+// get the projects from the API
 export async function getProjects() {
   try {
     const response = await axios({
@@ -47,6 +51,7 @@ export async function getProjects() {
   }
 }
 
+// get a specific project from the API
 export async function getProject(id) {
   try {
     const response = await axios({
@@ -62,6 +67,7 @@ export async function getProject(id) {
   }
 }
 
+// delete a project from the API
 export async function deleteProject(id) {
   try {
     await axios.delete(`${API_ROUTES.PROJECTS}/${id}`, {
@@ -76,6 +82,7 @@ export async function deleteProject(id) {
   }
 }
 
+// add a project to the API
 export async function addProject(data) {
   const userId = localStorage.getItem('userId');
   const project = {
@@ -103,6 +110,7 @@ export async function addProject(data) {
   }
 }
 
+// update a project in the API
 export async function updateProject(data, id) {
   const userId = localStorage.getItem('userId');
 
@@ -136,3 +144,22 @@ export async function updateProject(data, id) {
     return { error: true, message: err.message };
   }
 }
+
+// send an email to the API
+export async function handleSubmit({name, email, message}) {
+  event.preventDefault();
+
+  const response = await fetch(API_ROUTES.MAIL, {
+      method: 'POST',
+      headers: {
+          'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ name, email, message }),
+  });
+
+  if (response.ok) {
+      alert('Email envoyé avec succès !');
+  } else {
+      alert('Erreur lors de l\'envoi de l\'email. Veuillez réessayer.');
+  }
+};

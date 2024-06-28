@@ -5,8 +5,7 @@ const userController = require('../controllers/user');
 const multer = require('../middleware/multer-config');
 const auth = require('../middleware/auth');
 
-// Import the project controller
-// routes definitions
+// routes definitions, route + middleware authentification and image handling + controller
 router.post('/', auth, userController.checkUp, multer, projectController.createProject);
 router.get('/', projectController.getAllProjects);
 router.get('/:id', projectController.getProjectById);

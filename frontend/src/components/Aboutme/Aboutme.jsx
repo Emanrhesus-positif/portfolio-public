@@ -1,7 +1,6 @@
 import React from 'react';
 import styles from './Aboutme.module.scss';
 
-
 export const Aboutme = () => {
   return (
     <div id="a-propos" className={styles.Aboutmelink}>

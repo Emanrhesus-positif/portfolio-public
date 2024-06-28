@@ -12,6 +12,7 @@ import mySpace from '../../assets/images/edit.svg';
 import login from '../../assets/images/login.svg';
 import logout from '../../assets/images/logout.svg';
 
+// Component to display the header showing the navigation links, picture and login/logout button
 export const Header = ({ user, setUser }) => {
   const [lastScrollTop, setLastScrollTop] = useState(0);
   const [headerClass, setHeaderClass] = useState(styles.Header);

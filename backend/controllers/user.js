@@ -4,6 +4,7 @@ require('dotenv').config();
 
 const User = require('../models/user');
 
+// create a new user in the database
 exports.signup = async (req, res, next) => {
   try {
     const hashedPassword = await bcrypt.hash(req.body.password, 10);
@@ -18,6 +19,7 @@ exports.signup = async (req, res, next) => {
   }
 };
 
+// check the user credentials and send a token if they are correct
 exports.login = async (req, res, next) => {
   try {
     const user = await User.findOne({ email: req.body.email });
@@ -39,6 +41,7 @@ exports.login = async (req, res, next) => {
   }
 };
 
+// check the token validity
 exports.checkUp = async (req, res, next) => {
   try {
     const token = req.headers.authorization.split(' ')[1];

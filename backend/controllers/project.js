@@ -1,6 +1,8 @@
 const Project = require('../models/project');
 const fs = require('fs');
 const dotenv = require('dotenv');
+
+//create a new project and save it in the database with the image url gotten from the multer middleware
 exports.createProject = (req, res) => {
     if (req.body.project) {
         const projectObject = JSON.parse(req.body.project);
@@ -34,7 +36,6 @@ exports.getAllProjects = (req, res) => {
     Project.find()
         .then(projects => res.status(200).json(projects))
         .catch(error => res.status(400).json({ error }));
-    
 };
 
 exports.getProjectById = (req, res) => {
@@ -43,6 +44,7 @@ exports.getProjectById = (req, res) => {
         .catch(error => res.status(404).json({ error }));
 };
 
+//change the project image if a new image is uploaded and delete the old one from the server + update the project data
 exports.updateProject = (req, res) => {
     const projectObject = req.file ? {
         ...JSON.parse(req.body.project),
@@ -68,6 +70,7 @@ exports.updateProject = (req, res) => {
         });
 };
 
+//delete the project image from the server and the project data
 exports.deleteProject = (req, res, next) => {
     Project.findOne({ _id: req.params.id })
     .then((project) => {
@@ -77,7 +80,6 @@ exports.deleteProject = (req, res, next) => {
         .then(() => res.status(200).json({ message: 'Projet supprimé !'}))
         .catch(error => res.status(400).json({ error }));
     });
-
 })
 .catch((error) => {
 res.status(500).json({ error });

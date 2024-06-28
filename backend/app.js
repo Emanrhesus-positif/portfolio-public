@@ -9,6 +9,7 @@ require('dotenv').config();
 
 const app = express();
 
+//BDD connection
 mongoose.connect(
   process.env.DB_URL,
   {
@@ -19,6 +20,7 @@ mongoose.connect(
 .then(() => console.log('Connexion à BDD réussie !'))
 .catch(() => console.log('Connexion à BDD échouée !' + process.env.DB_SECURE_URL));
 
+//Static files
 app.use('/images', express.static(path.join(__dirname, 'images')));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));

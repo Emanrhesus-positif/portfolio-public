@@ -3,34 +3,21 @@ import github from '../../assets/images/github.svg';
 import linkedin from '../../assets/images/linkedin.svg'
 import styles from './Contactform.module.scss';
 import { API_ROUTES } from '../../utils/constants';
+import { handleSubmit } from '../../../lib/common';
 
+// Component to display the contact form and contact information
 export const Contactform = () => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [message, setMessage] = useState('');
 
-    const handleSubmit = async (event) => {
-        event.preventDefault();
-
-        const response = await fetch(API_ROUTES.MAIL, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ name, email, message }),
-        });
-
-        if (response.ok) {
-            alert('Email sent successfully.');
-        } else {
-            alert('There was an error sending the email.');
-        }
-    };
+    const OnSubmit = async (event) => {
+        await handleSubmit({name, email, message});
 
     return (
         <div id="contact" className={styles.ContactLink}>
             <div className={styles.ContactContainer}>
-                <form className={styles.Contact} onSubmit={handleSubmit}>
+                <form className={styles.Contact} onSubmit={OnSubmit}>
                     <label for="name">Nom :</label>
                     <input id="name" type="text" value={name} onChange={(e) => setName(e.target.value)} placeholder="Nom" required />
                     <label for="email">E-mail :</label>

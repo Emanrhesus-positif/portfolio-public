@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './ProjectItem.module.scss';
 
+// Component to display a single project
 export const ProjectItem = ({ project, auth }) => {
   
   return (

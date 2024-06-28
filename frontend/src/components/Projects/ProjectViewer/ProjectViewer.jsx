@@ -5,6 +5,7 @@ import styles from './ProjectViewer.module.scss';
 import arrowleft from '../../../assets/images/doubleleft.svg';
 import arrowright from '../../../assets/images/doubleright.svg';
 
+// Component to display the projects in the home page of the portfolio
 export const ProjectViewer = () => {
   const [projects, setProjects] = useState(null);
   const [loading, setLoading] = useState(true);

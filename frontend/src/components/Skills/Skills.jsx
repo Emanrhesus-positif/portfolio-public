@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import styles from './Skills.module.scss';
 import cv from '../../assets/images/cv.webp';
 
+// Component to display the skills list of the developer
 export const Skills = () => {
     const skillsRef = useRef(null);
 

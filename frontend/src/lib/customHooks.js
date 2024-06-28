@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { getAuthenticatedUser } from './common';
 
+// handle the user connection state
 export function useUser() {
   const [connectedUser, setConnectedUser] = useState(null);
   const [auth, setAuth] = useState(false);
@@ -19,6 +20,7 @@ export function useUser() {
   return { connectedUser, auth, userLoading };
 }
 
+// create a file preview with the new project image
 export function useFilePreview(file) {
   const fileInput = file[0] ?? [];
   const [imgSrc, setImgSrc] = useState(null);

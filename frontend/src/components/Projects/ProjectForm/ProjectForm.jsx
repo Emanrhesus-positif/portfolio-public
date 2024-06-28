@@ -5,6 +5,7 @@ import { useFilePreview } from '../../../lib/customHooks';
 import styles from './ProjectForm.module.scss';
 import { updateProject, addProject } from '../../../lib/common';
 
+// Component to display the form to add or update a project in the admin panel
 export const ProjectForm = ({ project, validate }) => {
 
   const {
